@@ -1,0 +1,29 @@
+import { DataTypes, Sequelize, UUIDV4 } from 'sequelize';
+import { connection } from '../config/database.js';
+
+export const Products = connection.define('products', 
+    {
+        id: {
+            type: DataTypes.UUIDV4,
+            defaultValue: UUIDV4,
+            allowNull: false,
+            primaryKey: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        ingredientes: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        price: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
+    },
+    {
+        timestamps: false
+    }
+
+)
